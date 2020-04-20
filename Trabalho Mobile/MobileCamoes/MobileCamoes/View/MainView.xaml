@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileCamoes.View.MainView"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Items}"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      BackgroundColor="Black"
+                      SeparatorColor="White"
+                      SelectionMode="Single"
+                      IsPullToRefreshEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Margin="15"
+                                         Padding="5">
+                              <Image Source="{Binding Poster}"
+                                       WidthRequest="100"
+                                       HeightRequest="200"/>
+                                <StackLayout HorizontalOptions="FillAndExpand"
+                                             VerticalOptions="FillAndExpand">
+                                    <Label FontSize="18"
+                                           TextColor="Red"
+                                       Text="{Binding Name}"/>
+                                    <Label FontSize="15">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Nota: "
+                                                      TextColor="White"/>
+                                                <Span Text="{Binding VoteAverage} "
+                                                      TextColor="White"/>
+                                                <Span Text="  "/>
+                                                <Span Text="Populariedade: "
+                                                      TextColor="White"/>
+                                                <Span Text="{Binding Popularity} "
+                                                      TextColor="White"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="{Binding Overview}"
+                                           FontSize="15"
+                                           TextColor="White"/>
+                                    <Label Text="{Binding Status}"
+                                           TextColor="White"
+                                           FontSize="15"
+                                           MainView.OnNextPageButtonClicked.Navigation.PushAsync/>
+
+                                </StackLayout>
+                                   
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
