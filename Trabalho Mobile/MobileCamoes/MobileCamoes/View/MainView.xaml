@@ -19,7 +19,7 @@
                             <StackLayout Orientation="Horizontal"
                                          Margin="15"
                                          Padding="5">
-                              <Image Source="{Binding Poster}"
+                                <Image Source="https://image.tmdb.org/t/p/w500/6t6r1VGQTTQecN4V0sZeqsmdU9g.jpg"
                                        WidthRequest="100"
                                        HeightRequest="200"/>
                                 <StackLayout HorizontalOptions="FillAndExpand"
@@ -42,23 +42,12 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Text="{Binding Overview}"
-                                           FontSize="15"
-                                           TextColor="White"/>
-                                    <Label Text="{Binding Status}"
-                                           TextColor="White"
-                                           FontSize="15"
-                                           MainView.OnNextPageButtonClicked.Navigation.PushAsync/>
-
                                 </StackLayout>
-                                   
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

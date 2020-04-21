@@ -12,7 +12,8 @@ namespace MobileCamoes
         public App()
         {
             InitializeComponent();
-
+           //MainPage = new NavigationPage(new View.MainView());
+           // public static Task<True> FadeTo(this VisualElement view, 0.5, 250, Easing.BounceIn);
             BuildDependencies();
             InitNavigation();
 
