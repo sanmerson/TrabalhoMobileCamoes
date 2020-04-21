@@ -17,10 +17,10 @@ namespace MobileCamoes.View
 			InitializeComponent ();
 
 		}
-
-		private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+		private async void ListView_ItemTapped_1(object sender, ItemTappedEventArgs e)
 		{
-
+				await Navigation.PushAsync(new DetailVeiw());
+			
 		}
 	}
 }

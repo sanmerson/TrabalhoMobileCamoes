@@ -11,6 +11,7 @@
                       HasUnevenRows="True"
                       BackgroundColor="Black"
                       SeparatorColor="White"
+                      ItemTapped="ListView_ItemTapped_1"
                       SelectionMode="Single"
                       IsPullToRefreshEnabled="True">
                 <ListView.ItemTemplate>
@@ -19,7 +20,7 @@
                             <StackLayout Orientation="Horizontal"
                                          Margin="15"
                                          Padding="5">
-                                <Image Source="https://image.tmdb.org/t/p/w500/6t6r1VGQTTQecN4V0sZeqsmdU9g.jpg"
+                                <Image Source="{Binding Poster}"
                                        WidthRequest="100"
                                        HeightRequest="200"/>
                                 <StackLayout HorizontalOptions="FillAndExpand"
