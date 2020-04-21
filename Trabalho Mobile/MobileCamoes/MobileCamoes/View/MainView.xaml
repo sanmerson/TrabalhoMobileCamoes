@@ -12,37 +12,43 @@
                       BackgroundColor="Black"
                       SeparatorColor="White"
                       ItemTapped="ListView_ItemTapped_1"
-                      SelectionMode="Single"
+                      SelectionMode="None"
                       IsPullToRefreshEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal"
-                                         Margin="15"
+                                         Margin="10"
                                          Padding="5">
-                                <Image Source="{Binding Poster}"
-                                       WidthRequest="100"
-                                       HeightRequest="200"/>
+                                  <Image Source="{Binding Poster}"
+                                         WidthRequest="190"
+                                         HeightRequest="210"/>
                                 <StackLayout HorizontalOptions="FillAndExpand"
                                              VerticalOptions="FillAndExpand">
-                                    <Label FontSize="18"
-                                           TextColor="Red"
-                                       Text="{Binding Name}"/>
-                                    <Label FontSize="15">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="Nota: "
-                                                      TextColor="White"/>
-                                                <Span Text="{Binding VoteAverage} "
-                                                      TextColor="White"/>
-                                                <Span Text="  "/>
-                                                <Span Text="Populariedade: "
-                                                      TextColor="White"/>
-                                                <Span Text="{Binding Popularity} "
-                                                      TextColor="White"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                        <Label FontSize="18"
+                                               TextColor="Red"
+                                               Text="{Binding Name}"/>
+                                        <Label Text="{Binding OriginalName}"
+                                               TextColor="White"
+                                               FontSize="12"/>
+                                        <Label TextColor="White"
+                                               FontSize="15">
+                                              <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Nota: "/>
+                                                    <Span Text="{Binding VoteAverage}"/>
+                                                </FormattedString>
+                                              </Label.FormattedText>
+                                        </Label>
+                                        <Label TextColor="White"
+                                               FontSize="15">
+                                              <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Populariedade: "/>
+                                                    <Span Text="{Binding Popularity}"/>
+                                                </FormattedString>
+                                              </Label.FormattedText>
+                                        </Label>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

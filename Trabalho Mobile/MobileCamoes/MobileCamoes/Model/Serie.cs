@@ -33,8 +33,11 @@ namespace MobileCamoes.Model
         [JsonProperty("popularity")]
         public string Popularity { get; set; }
 
-   //     [JsonProperty("status")]
-    //    public string Status { get; set; }
+      //  [JsonProperty("genres")]
+      //  public string Genres { get; set; }
+
+      //  [JsonIgnore]
+      //  public string Generos{ get { return $"{Genres}{Name}"; } }
 
         [JsonIgnore]
         public string ReleaseDate { get { return $"{FirstAirDate:dd/MM/yy}"; } }
