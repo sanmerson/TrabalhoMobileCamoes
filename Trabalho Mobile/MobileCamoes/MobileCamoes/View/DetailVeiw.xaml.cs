@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MobileCamoes.Model;
+using MobileCamoes.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,9 @@ namespace MobileCamoes.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetailVeiw : ContentPage
 	{
-		public DetailVeiw ()
+		public DetailVeiw(Serie serie)
 		{
+			BindingContext = new DetailViewModel(serie);
 			InitializeComponent ();
 		}
 	}

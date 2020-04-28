@@ -8,49 +8,103 @@
             <ListView ItemsSource="{Binding Items}"
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand"
-                      HasUnevenRows="True"
                       BackgroundColor="Black"
-                      SeparatorColor="White"
-                      ItemTapped="ListView_ItemTapped_1"
                       SelectionMode="None"
+                      ItemTapped="ListView_ItemTapped_1"
+                      RowHeight="500"
                       IsPullToRefreshEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal"
-                                         Margin="10"
-                                         Padding="5">
-                                  <Image Source="{Binding Poster}"
-                                         WidthRequest="190"
-                                         HeightRequest="210"/>
-                                <StackLayout HorizontalOptions="FillAndExpand"
-                                             VerticalOptions="FillAndExpand">
-                                        <Label FontSize="18"
-                                               TextColor="Red"
-                                               Text="{Binding Name}"/>
+
+                            <Frame HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="FillAndExpand"
+                                     Margin="5">
+                                <StackLayout x:Name="layoutCelua"
+                                         Margin="0,0,0,5"
+                                         BackgroundColor="Transparent"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="FillAndExpand">
+                                    <RelativeLayout>
+
+                                        <Image x:Name="ImgFoto" Source="{Binding Poster}"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="FillAndExpand"
+                                         Aspect="AspectFill"
+                                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+
+                                        <Label Text="{Binding Name}"
+                                               FontSize="30"
+                                               TextColor="DarkBlue"
+                                               FontAttributes="Bold"
+                                               BackgroundColor="Red"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="EndAndExpand"
+                                               HeightRequest="40"
+                                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,ElementName=ImgFoto, Property=Width}"
+                                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=ImgFoto, Factor=0.2,Constant=0}"/>
                                         <Label Text="{Binding OriginalName}"
-                                               TextColor="White"
-                                               FontSize="12"/>
-                                        <Label TextColor="White"
-                                               FontSize="15">
-                                              <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="Nota: "/>
-                                                    <Span Text="{Binding VoteAverage}"/>
-                                                </FormattedString>
-                                              </Label.FormattedText>
-                                        </Label>
-                                        <Label TextColor="White"
-                                               FontSize="15">
-                                              <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="Populariedade: "/>
-                                                    <Span Text="{Binding Popularity}"/>
-                                                </FormattedString>
-                                              </Label.FormattedText>
-                                        </Label>
+                                               TextColor="Red"
+                                               FontSize="30"
+                                               HorizontalTextAlignment="End"
+                                               VerticalTextAlignment="End"
+                                               HorizontalOptions="EndAndExpand"
+                                               VerticalOptions="EndAndExpand"
+/>
+                                        <!--        <Label TextColor="White"
+                                               FontSize="15"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="EndAndExpand"
+                                               HeightRequest="120"
+                                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,ElementName=ImgFoto, Property=Width}"
+                                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=ImgFoto, Factor=0.2,Constant=0}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Nota: "/>
+                                                <Span Text="{Binding VoteAverage}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label TextColor="White"
+                                               FontSize="15"
+                                            HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="EndAndExpand"
+                                               HeightRequest="140"
+                                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,ElementName=ImgFoto, Property=Width}"
+                                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=ImgFoto, Factor=0.2,Constant=0}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Populariedade: "/>
+                                                <Span Text="{Binding Popularity}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label TextColor="White"
+                                               FontSize="15"
+                                            HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="EndAndExpand"
+                                               HeightRequest="110"
+                                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,ElementName=ImgFoto, Property=Width}"
+                                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=ImgFoto, Factor=0.2,Constant=0}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Generos: "/>
+                                                <Span Text="{Binding Generos.Name}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>-->
+                                    </RelativeLayout>
                                 </StackLayout>
-                            </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

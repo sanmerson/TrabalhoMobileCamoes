@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileCamoes.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,9 @@ namespace MobileCamoes.View
 		}
 		private async void ListView_ItemTapped_1(object sender, ItemTappedEventArgs e)
 		{
-				await Navigation.PushAsync(new DetailVeiw());
+			ListView listView = sender as ListView;
+			Serie serie = listView.SelectedItem as Serie;
+			await Navigation.PushAsync(new DetailVeiw(serie));
 			
 		}
 	}
