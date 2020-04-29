@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileCamoes.View.MainView"
-             Title="{Binding Title}">
+             Title="{Binding Title}" >
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding Items}"
@@ -31,7 +31,7 @@
                                         <Image x:Name="ImgFoto" Source="{Binding Poster}"
                                          HorizontalOptions="FillAndExpand"
                                          VerticalOptions="FillAndExpand"
-                                         Aspect="AspectFill"
+                                         Aspect="AspectFit"
                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
 
@@ -53,8 +53,7 @@
                                                HorizontalTextAlignment="End"
                                                VerticalTextAlignment="End"
                                                HorizontalOptions="EndAndExpand"
-                                               VerticalOptions="EndAndExpand"
-/>
+                                               VerticalOptions="EndAndExpand"/>
                                         <!--        <Label TextColor="White"
                                                FontSize="15"
                                                HorizontalTextAlignment="Center"

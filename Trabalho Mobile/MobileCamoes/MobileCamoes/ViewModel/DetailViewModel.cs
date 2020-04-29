@@ -65,6 +65,16 @@ namespace MobileCamoes.ViewModel
                 OnPropertyChanged();
             }
         }
+        private double vote_average;
+        public double Vote_Average
+        {
+            get => vote_average;
+            set
+            {
+                vote_average = value;
+                OnPropertyChanged();
+            }
+        }
 
         public DetailViewModel(Serie serie) : base("")
         {
@@ -75,6 +85,7 @@ namespace MobileCamoes.ViewModel
             Overview = serie.Overview;
             ReleaseDate = serie.ReleaseDate;
             BackDrop = serie.BackDrop;
+            Vote_Average = serie.VoteAverage;
         }
     }
         

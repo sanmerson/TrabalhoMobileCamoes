@@ -2,17 +2,89 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileCamoes.View.DetailVeiw"
-             Title="{Binding Title}" BackgroundColor="Black">
+             Title="Details" BackgroundColor="Black">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="{Binding BackDrop}"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                   Margin="5"/>
             <ScrollView>
                 <StackLayout>
-                    <Label Text="{Binding Overview}"
-                           TextColor="Gold"/>
+                   <!-- <Label Text="Name"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/> -->
+                    <Frame>
+                        <Label Text="{Binding Name}"
+                               TextColor="Black"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                    <Frame>
+                        <Image Source="{Binding Image}"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Aspect="AspectFit"/>
+                    </Frame>
+                        <Label Text="Release Date"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    <Frame>
+                        <Label Text="{Binding ReleaseDate}"
+                               TextColor="Black"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                        <Label Text="Rating"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    <Frame>
+                        <Label Text="{Binding Vote_Average}"
+                               TextColor="Black"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                        <Label Text="Overview"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    <Frame>
+                        <Label Text="{Binding Overview}"
+                               TextColor="Black"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
                 </StackLayout>
             </ScrollView>
         </StackLayout>
