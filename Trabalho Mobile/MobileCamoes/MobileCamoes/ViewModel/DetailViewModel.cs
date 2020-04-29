@@ -10,7 +10,8 @@ namespace MobileCamoes.ViewModel
     public class DetailViewModel : ViewModelBase
 
     {
-        /*
+        public Serie DetailSerie = new Serie();
+
         private string image;
         public string Image
         {
@@ -32,16 +33,48 @@ namespace MobileCamoes.ViewModel
                 OnPropertyChanged();
             }
         }
-        */
 
-        public Serie DetailSerie = new Serie();
+        private string overview;
+        public string Overview
+        {
+            get => overview;
+            set
+            {
+                overview = value;
+                OnPropertyChanged();
+            }
+        }
+        private string releaseDate;
+        public string ReleaseDate
+        {
+            get => releaseDate;
+            set
+            {
+                releaseDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string backdrop;
+        public string BackDrop
+        {
+            get => backdrop;
+            set
+            {
+                backdrop = value;
+                OnPropertyChanged();
+            }
+        }
+
         public DetailViewModel(Serie serie) : base("")
         {
-
-             DetailSerie = serie;
-        //     Title = serie.Name;
-       //     Image = serie.Poster;
-         //   Name = string.IsNullOrEmpty(serie.Name) ? string.Empty : serie.Name.ToUpper();
+            DetailSerie = serie;
+            Title = serie.Name;
+            Image = serie.Poster;
+            Name = string.IsNullOrEmpty(serie.Name) ? string.Empty : serie.Name.ToUpper();
+            Overview = serie.Overview;
+            ReleaseDate = serie.ReleaseDate;
+            BackDrop = serie.BackDrop;
         }
     }
         
