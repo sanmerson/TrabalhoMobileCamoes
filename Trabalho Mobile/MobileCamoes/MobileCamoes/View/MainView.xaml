@@ -47,14 +47,17 @@
                                                HeightRequest="40"
                                                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,ElementName=ImgFoto, Property=Width}"
                                                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=ImgFoto, Factor=0.2,Constant=0}"/>
-                                        <Label Text="{Binding OriginalName}"
+                                     <!--   <Label 
                                                TextColor="Red"
-                                               FontSize="30"
-                                               HorizontalTextAlignment="End"
-                                               VerticalTextAlignment="End"
-                                               HorizontalOptions="EndAndExpand"
-                                               VerticalOptions="EndAndExpand"/>
-                                        <!--        <Label TextColor="White"
+                                               FontSize="15"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="EndAndExpand"
+                                               RelativeLayout.YConstraint="300"
+                                               BackgroundColor="DarkGray"
+                                               Opacity="0.5"/> -->
+                                                <Label TextColor="White"
                                                FontSize="15"
                                                HorizontalTextAlignment="Center"
                                                VerticalTextAlignment="Center"
@@ -70,7 +73,10 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label TextColor="White"
+                                        <Label Text="{Binding Genrers}"
+                                               TextColor="White"
+                                               FontSize="20"/>
+                                        <!--    <Label TextColor="White"
                                                FontSize="15"
                                             HorizontalTextAlignment="Center"
                                                VerticalTextAlignment="Center"

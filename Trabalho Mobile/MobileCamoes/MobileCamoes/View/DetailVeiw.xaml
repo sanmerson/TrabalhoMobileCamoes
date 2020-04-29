@@ -15,7 +15,7 @@
                                HorizontalOptions="CenterAndExpand"
                                VerticalOptions="CenterAndExpand"
                                VerticalTextAlignment="Center"/> -->
-                    <Frame>
+                    <Frame Margin="5,5,5,0">
                         <Label Text="{Binding Name}"
                                TextColor="Black"
                                FontSize="16"
@@ -25,7 +25,7 @@
                                VerticalOptions="CenterAndExpand"
                                VerticalTextAlignment="Center"/>
                     </Frame>
-                    <Frame>
+                    <Frame Margin="5,0,5,0">
                         <Image Source="{Binding Image}"
                                HorizontalOptions="FillAndExpand"
                                VerticalOptions="FillAndExpand"
@@ -39,7 +39,7 @@
                                HorizontalOptions="CenterAndExpand"
                                VerticalOptions="CenterAndExpand"
                                VerticalTextAlignment="Center"/>
-                    <Frame>
+                    <Frame Margin="5">
                         <Label Text="{Binding ReleaseDate}"
                                TextColor="Black"
                                FontSize="16"
@@ -57,7 +57,7 @@
                                HorizontalOptions="CenterAndExpand"
                                VerticalOptions="CenterAndExpand"
                                VerticalTextAlignment="Center"/>
-                    <Frame>
+                    <Frame Margin="5">
                         <Label Text="{Binding Vote_Average}"
                                TextColor="Black"
                                FontSize="16"
@@ -75,7 +75,7 @@
                                HorizontalOptions="CenterAndExpand"
                                VerticalOptions="CenterAndExpand"
                                VerticalTextAlignment="Center"/>
-                    <Frame>
+                    <Frame Margin="5">
                         <Label Text="{Binding Overview}"
                                TextColor="Black"
                                FontSize="16"

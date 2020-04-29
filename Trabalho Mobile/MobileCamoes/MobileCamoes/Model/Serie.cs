@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using MobileCamoes.Infra;
+using System.Collections.Generic;
 
 namespace MobileCamoes.Model
 {
@@ -33,6 +34,9 @@ namespace MobileCamoes.Model
         [JsonProperty("popularity")]
         public string Popularity { get; set; }
 
+        [JsonProperty("genre_ids")]
+        public IEnumerable<int> GenrersId { get; set; }
+
         [JsonIgnore]
         public string ReleaseDate { get { return $"{FirstAirDate:dd/MM/yy}"; } }
 
@@ -42,6 +46,11 @@ namespace MobileCamoes.Model
         [JsonIgnore]
         public string BackDrop { get { return $"{AppSettings.ApiImageBaseUrl}{BackdropPath}"; } }
 
+        [JsonIgnore]
+        public List<Genrer> Genrers { get; set; }
+
+        [JsonIgnore]
+        public string Genres { get => string.Join(" | ", Genrers); }
     }
 
 }

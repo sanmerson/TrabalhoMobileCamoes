@@ -18,5 +18,10 @@ namespace MobileCamoes.Services
         {
             return await _api.GetSerieResponseAsync(AppSettings.ApiKey);
         }
+
+        public async Task<Genrer> GetGenrerAsync(int id)
+        {
+            return await _api.GetGenrerAsync(id, AppSettings.ApiKey);
+        }
     }
 }

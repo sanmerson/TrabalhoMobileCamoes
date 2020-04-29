@@ -20,9 +20,8 @@ namespace MobileCamoes.View
 		}
 		private async void ListView_ItemTapped_1(object sender, ItemTappedEventArgs e)
 		{
-			//ListView listView = sender as ListView;
+
 			Serie serie = e.Item as Serie;
-			//Serie serie = serie.SelectedItem as Serie;
 			await Navigation.PushAsync(new DetailVeiw(serie));
 			
 		}

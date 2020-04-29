@@ -9,5 +9,8 @@ namespace MobileCamoes.Infra.API
     {
         [Get("/tv/popular?api_key={apiKey}")]
         Task<SerieResponse> GetSerieResponseAsync(string apiKey);
+
+        [Get("/genre/{genrerId}?api_key={apiKey}")]
+        Task<Genrer> GetGenrerAsync(int genrerId, string apiKey);
     }
 }

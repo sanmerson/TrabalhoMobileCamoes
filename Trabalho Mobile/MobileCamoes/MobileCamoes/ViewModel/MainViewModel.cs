@@ -1,6 +1,8 @@
 ﻿using MobileCamoes.Model;
 using MobileCamoes.Services;
 using MobileCamoes.ViewModel.Base;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +21,7 @@ namespace MobileCamoes.ViewModel
 
         public ObservableCollection<Serie> Items { get; }
 
-        public MainViewModel(ISerieService serieService) : base("Camões - Mobile - 2020")
+        public MainViewModel(ISerieService serieService) : base("Sanmerson - APP - Series")
         {
             _serieService = serieService;
 
@@ -45,6 +47,25 @@ namespace MobileCamoes.ViewModel
         async Task LoadDataAsync()
         {
             var result = await _serieService.GetSeriesAsync();
+
+            if(result != null)
+            {
+                foreach (Serie serie in result.Series)
+                {
+                    serie.Genrers = new List<Genrer>();
+                    foreach (int genrer in serie.GenrersId)
+                    {
+                       try
+                        {
+                            serie.Genrers.Add(await _serieService.GetGenrerAsync(genrer));
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                    }
+                }
+            }
 
             AddItens(result);
         }
