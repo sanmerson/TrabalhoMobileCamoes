@@ -14,6 +14,19 @@ namespace MobileCamoes.ViewModel
     public class MainViewModel : ViewModelBase
     {
 
+        public Serie MainSerie = new Serie();
+
+        private string vote_average;
+        public string VoteAverage
+        {
+            get => vote_average;
+            set
+            {
+                vote_average = value;
+                OnPropertyChanged();
+            }
+        }
+
         readonly ISerieService _serieService;
 
         public ICommand ItemClickCommand { get; }
@@ -28,6 +41,7 @@ namespace MobileCamoes.ViewModel
             Items = new ObservableCollection<Serie>();
 
             ItemClickCommand = new Command<Serie>(async (item) => await ItemClickCommandExecute(item));
+
         }
 
         private async Task ItemClickCommandExecute(Serie item)
@@ -44,7 +58,8 @@ namespace MobileCamoes.ViewModel
             await LoadDataAsync();
         }
 
-        async Task LoadDataAsync()
+
+async Task LoadDataAsync()
         {
             var result = await _serieService.GetSeriesAsync();
 
@@ -53,9 +68,10 @@ namespace MobileCamoes.ViewModel
                 foreach (Serie serie in result.Series)
                 {
                     serie.Genrers = new List<Genrer>();
-                    foreach (int genrer in serie.GenrersId)
+                   foreach (int genrer in serie.GenrersId)
                     {
-                       try
+
+                      try
                         {
                             serie.Genrers.Add(await _serieService.GetGenrerAsync(genrer));
                         }

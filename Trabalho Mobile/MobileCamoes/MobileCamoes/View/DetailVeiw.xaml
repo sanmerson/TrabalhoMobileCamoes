@@ -31,7 +31,25 @@
                                VerticalOptions="FillAndExpand"
                                Aspect="AspectFit"/>
                     </Frame>
-                        <Label Text="Release Date"
+                    <Label Text="Original Name"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    <Frame Margin="5">
+                        <Label Text="{Binding OriginalName}"
+                               TextColor="Black"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                    <Label Text="Release Date"
                                TextColor="White"
                                FontSize="18"
                                FontAttributes="Bold"
@@ -49,7 +67,25 @@
                                VerticalOptions="CenterAndExpand"
                                VerticalTextAlignment="Center"/>
                     </Frame>
-                        <Label Text="Rating"
+                    <Label Text="Popularity"
+                               TextColor="White"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    <Frame Margin="5">
+                        <Label Text="{Binding Popularity}"
+                               TextColor="Black"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+                    <Label Text="Rating"
                                TextColor="White"
                                FontSize="18"
                                FontAttributes="Bold"

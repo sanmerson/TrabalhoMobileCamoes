@@ -34,6 +34,17 @@ namespace MobileCamoes.ViewModel
             }
         }
 
+        private string original_name;
+        public string OriginalName
+        {
+            get => original_name;
+            set
+            {
+                original_name = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string overview;
         public string Overview
         {
@@ -76,16 +87,29 @@ namespace MobileCamoes.ViewModel
             }
         }
 
+        private string popularity;
+        public string Popularity
+        {
+            get => popularity;
+            set
+            {
+                popularity = value;
+                OnPropertyChanged();
+            }
+        }
+
         public DetailViewModel(Serie serie) : base("")
         {
             DetailSerie = serie;
             Title = serie.Name;
             Image = serie.Poster;
             Name = string.IsNullOrEmpty(serie.Name) ? string.Empty : serie.Name.ToUpper();
+            OriginalName = serie.OriginalName;
             Overview = serie.Overview;
             ReleaseDate = serie.ReleaseDate;
             BackDrop = serie.BackDrop;
             Vote_Average = serie.VoteAverage;
+            Popularity = serie.Popularity;
         }
     }
         
