@@ -12,6 +12,18 @@ namespace MobileCamoes.ViewModel
     {
         public Serie DetailSerie = new Serie();
 
+        private string name;
+        public string Name
+        {
+            get => name;
+            set
+            {
+                name = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         private string image;
         public string Image
         {
@@ -23,16 +35,6 @@ namespace MobileCamoes.ViewModel
             }
         }
 
-        private string name;
-        public string Name
-        {
-            get => name;
-            set
-            {
-                name = value;
-                OnPropertyChanged();
-            }
-        }
 
         private string original_name;
         public string OriginalName
@@ -101,7 +103,7 @@ namespace MobileCamoes.ViewModel
         public DetailViewModel(Serie serie) : base("")
         {
             DetailSerie = serie;
-            Title = serie.Name;
+            Name = serie.Name;
             Image = serie.Poster;
             Name = string.IsNullOrEmpty(serie.Name) ? string.Empty : serie.Name.ToUpper();
             OriginalName = serie.OriginalName;
@@ -111,6 +113,7 @@ namespace MobileCamoes.ViewModel
             Vote_Average = serie.VoteAverage;
             Popularity = serie.Popularity;
         }
+
     }
         
 }
